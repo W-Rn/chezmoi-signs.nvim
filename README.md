@@ -1,20 +1,19 @@
 # chezmoi-signs.nvim
 
-Neovim 插件：在符号列显示 chezmoi 主目录文件与源目录之间的差异标记，效果类似 [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)。
+<details open>
+<summary><b>中文</b></summary>
 
-_A Neovim plugin that shows diff signs between chezmoi-managed files and their source, similar to [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)._
+Neovim 插件：在符号列显示 chezmoi 主目录文件与源目录之间的差异标记，效果类似 [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 的侧边差异图标。
 
-- 🟢 `│` added / 添加的行
-- 🟡 `│` changed / 修改的行
-- 🔴 `▁` deleted / 删除的行
+- 🟢 `│` 添加的行
+- 🟡 `│` 修改的行
+- 🔴 `▁` 删除的行
 
 编辑时实时刷新（300ms 防抖），保存后强制重新读取源文件。
 
-_Live refresh while editing (300ms debounce), full refresh on save._
+### 安装
 
-## 安装 / Installation
-
-### lazy.nvim
+**lazy.nvim**
 
 ```lua
 {
@@ -23,27 +22,27 @@ _Live refresh while editing (300ms debounce), full refresh on save._
 }
 ```
 
-### 手动 / Manual
+**手动**
 
 ```lua
 require("chezmoi-signs").setup()
 ```
 
-## 配置 / Configuration
+### 配置
 
 ```lua
 require("chezmoi-signs").setup({
-  debounce_ms = 300,    -- debounce delay in ms / 防抖毫秒数
-  debug = false,        -- enable debug logging / 调试日志
+  debounce_ms = 300,    -- 防抖毫秒数
+  debug = false,        -- 调试日志
 
-  -- sign icons (any Unicode char) / 图标样式
+  -- 图标样式（支持任意 Unicode 字符）
   signs = {
     add    = { text = "│", hl = "ChezmoiSignAdd" },
     change = { text = "│", hl = "ChezmoiSignChange" },
     delete = { text = "▁", hl = "ChezmoiSignDelete" },
   },
 
-  -- highlight colors / 高亮颜色
+  -- 高亮颜色
   highlights = {
     ChezmoiSignAdd    = { fg = "#2da043", bg = "none" },
     ChezmoiSignChange = { fg = "#d9a404", bg = "none" },
@@ -52,27 +51,91 @@ require("chezmoi-signs").setup({
 })
 ```
 
-图标示例 / _Icon examples_：
+### 命令
 
-| 风格 / Style | 文本 / Text |
-|--------------|-------------|
-| 竖线 / bars | `│` `▎` `▌` `┃` |
-| ASCII | `+` `~` `-` |
-| 底部标记 / bottom | `▁` `▔` `_` |
+| 命令 | 说明 |
+|------|------|
+| `:ChezmoiSignsRefresh` | 手动刷新 |
+| `:ChezmoiSignsToggle`  | 启用/禁用 |
+| `:ChezmoiSignsClear`   | 清除标记 |
 
-## 命令 / Commands
-
-| 命令 / Command | 说明 / Description |
-|----------------|---------------------|
-| `:ChezmoiSignsRefresh` | 手动刷新 / _refresh signs_ |
-| `:ChezmoiSignsToggle`  | 启用/禁用 / _toggle enable_ |
-| `:ChezmoiSignsClear`   | 清除标记 / _clear signs_ |
-
-## 依赖 / Requirements
+### 依赖
 
 - [chezmoi](https://github.com/twpayne/chezmoi)
 - Neovim >= 0.8
 
-## 许可证 / License
+### 许可证
 
 MIT
+
+</details>
+
+<details>
+<summary><b>English</b></summary>
+
+Neovim plugin that shows diff signs in the sign column for chezmoi-managed files compared to their source, similar to the side diff icons in [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim).
+
+- 🟢 `│` added lines
+- 🟡 `│` changed lines
+- 🔴 `▁` deleted lines
+
+Live refresh while editing (300ms debounce), full refresh on save.
+
+### Installation
+
+**lazy.nvim**
+
+```lua
+{
+  "W-Rn/chezmoi-signs.nvim",
+  opts = {},
+}
+```
+
+**Manual**
+
+```lua
+require("chezmoi-signs").setup()
+```
+
+### Configuration
+
+```lua
+require("chezmoi-signs").setup({
+  debounce_ms = 300,    -- debounce delay in ms
+  debug = false,        -- enable debug logging
+
+  -- sign icons (any Unicode char)
+  signs = {
+    add    = { text = "│", hl = "ChezmoiSignAdd" },
+    change = { text = "│", hl = "ChezmoiSignChange" },
+    delete = { text = "▁", hl = "ChezmoiSignDelete" },
+  },
+
+  -- highlight colors
+  highlights = {
+    ChezmoiSignAdd    = { fg = "#2da043", bg = "none" },
+    ChezmoiSignChange = { fg = "#d9a404", bg = "none" },
+    ChezmoiSignDelete = { fg = "#d72e3d", bg = "none" },
+  },
+})
+```
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `:ChezmoiSignsRefresh` | refresh signs |
+| `:ChezmoiSignsToggle`  | toggle enable/disable |
+| `:ChezmoiSignsClear`   | clear all signs |
+
+### Requirements
+
+- [chezmoi](https://github.com/twpayne/chezmoi)
+- Neovim >= 0.8
+
+### License
+
+MIT
+
+</details>
