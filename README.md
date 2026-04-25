@@ -18,7 +18,7 @@ _Live refresh while editing (300ms debounce), full refresh on save._
 
 ```lua
 {
-  "your-github-username/chezmoi-signs.nvim",
+  "W-Rn/chezmoi-signs.nvim",
   opts = {},
 }
 ```
