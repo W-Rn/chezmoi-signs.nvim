@@ -1,7 +1,12 @@
 # chezmoi-signs.nvim
 
-<details open>
-<summary><b>中文</b></summary>
+[中文](#中文) | [English](#english)
+
+---
+
+<a id="中文"></a>
+
+## 中文
 
 Neovim 插件：在符号列显示 chezmoi 主目录文件与源目录之间的差异标记，效果类似 [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 的侧边差异图标。
 
@@ -68,10 +73,11 @@ require("chezmoi-signs").setup({
 
 MIT
 
-</details>
+---
 
-<details>
-<summary><b>English</b></summary>
+<a id="english"></a>
+
+## English
 
 Neovim plugin that shows diff signs in the sign column for chezmoi-managed files compared to their source, similar to the side diff icons in [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim).
 
@@ -125,9 +131,9 @@ require("chezmoi-signs").setup({
 
 | Command | Description |
 |---------|-------------|
-| `:ChezmoiSignsRefresh` | refresh signs |
-| `:ChezmoiSignsToggle`  | toggle enable/disable |
-| `:ChezmoiSignsClear`   | clear all signs |
+| `:ChezmoiSignsRefresh` | Refresh signs in current buffer |
+| `:ChezmoiSignsToggle`  | Enable / disable the plugin |
+| `:ChezmoiSignsClear`   | Clear all signs in current buffer |
 
 ### Requirements
 
@@ -137,5 +143,3 @@ require("chezmoi-signs").setup({
 ### License
 
 MIT
-
-</details>
